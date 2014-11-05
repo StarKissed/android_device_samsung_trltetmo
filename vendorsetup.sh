@@ -1,2 +1,2 @@
-add_lunch_combo cm_trlte-userdebug
+add_lunch_combo cm_trltephil-userdebug
 

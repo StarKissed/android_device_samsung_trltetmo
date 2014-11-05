@@ -3,11 +3,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-$(call inherit-product-if-exists, vendor/samsung/trlte/trlte-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/trltephil/trltephil-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/samsung/trlte/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/trltephil/overlay
 
-LOCAL_PATH := device/samsung/trlte
+LOCAL_PATH := device/samsung/trltephil
 
 #kernel header
 ifneq ($(OUT),)
@@ -54,5 +54,5 @@ PRODUCT_COPY_FILES_OVERRIDES += \
     root/fstab.goldfish \
     root/ueventd.goldfish.rc
 
-PRODUCT_NAME := full_trlte
-PRODUCT_DEVICE := trlte
+PRODUCT_NAME := full_trltephil
+PRODUCT_DEVICE := trltephil

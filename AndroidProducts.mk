@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_trlte.mk
+    $(LOCAL_DIR)/device_trltephil.mk

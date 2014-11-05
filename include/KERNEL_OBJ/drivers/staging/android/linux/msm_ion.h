@@ -1,5 +1,5 @@
-#ifndef _MSM_ION_H
-#define _MSM_ION_H
+#ifndef _UAPI_MSM_ION_H
+#define _UAPI_MSM_ION_H
 
 #include "ion.h"
 
