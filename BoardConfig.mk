@@ -2,8 +2,8 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/samsung/trltephil/BoardConfigVendor.mk
-#TARGET_SPECIFIC_HEADER_PATH := device/samsung/trltephil/include
+-include vendor/samsung/trltetmo/BoardConfigVendor.mk
+#TARGET_SPECIFIC_HEADER_PATH := device/samsung/trltetmo/include
 #TARGET_PRODUCT_KERNEL_HEADERS := /media/d/kernel/g906s-kk/include
 BOARD_VENDOR := samsung
 TARGET_ARCH := arm
@@ -27,23 +27,23 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
 #TARGET_KERNEL_SOURCE := /media/d/kernel/n910t-kk/Kernel
 #TARGET_KERNEL_CONFIG := apq8084_sec_defconfig
 #TARGET_KERNEL_VARIANT_CONFIG := apq8084_sec_trlte_tmo_defconfig
-TARGET_PREBUILT_KERNEL := device/samsung/trltephil/kernel
+TARGET_PREBUILT_KERNEL := device/samsung/trltetmo/kernel
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 dwc3_msm.cpu_to_affin=1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02600000 --tags_offset 0x02400000 --dt device/samsung/trltephil/dt.img
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02600000 --tags_offset 0x02400000 --dt device/samsung/trltetmo/dt.img
 
 # fix this up by examining /proc/mtd on a running device
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USES_QCOM_BSP := true
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/trltephil/recovery/recovery_keys.c
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/trltetmo/recovery/recovery_keys.c
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"fonten55_33x84.h\"
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_FSTAB := device/samsung/trltephil/rootdir/etc/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/samsung/trltetmo/rootdir/etc/recovery.fstab
 #TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
 #BOARD_RECOVERY_SWIPE := true
 
@@ -60,5 +60,6 @@ COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
 TARGET_OTA_ASSERT_DEVICE := trltetmo,trltespr,trltecan,trlteusc,trltevzw,trlteatt
 
 TARGET_QCOM_DISPLAY_VARIANT := caf-new
+RECOVERY_VARIANT := philz
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
