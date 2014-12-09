@@ -9,21 +9,21 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/trltetmo/overlay
 
 LOCAL_PATH := device/samsung/trltetmo
 
-#kernel header
-ifneq ($(OUT),)
-ifeq ($(MK_KERNEL_OBJ),)
-$(shell rm -rf $(OUT)/obj/KERNEL_OBJ;\
-    mkdir -p $(OUT)/obj;\
-    ln -s $(ANDROID_BUILD_TOP)/$(LOCAL_PATH)/include/KERNEL_OBJ $(OUT)/obj/KERNEL_OBJ)
-MK_KERNEL_OBJ := true
-endif
-endif
+# Prebuilt Kernel
+#ifneq ($(OUT),)
+#ifeq ($(MK_KERNEL_OBJ),)
+#$(shell rm -rf $(OUT)/obj/KERNEL_OBJ;\
+#    mkdir -p $(OUT)/obj;\
+#    ln -s $(ANDROID_BUILD_TOP)/$(LOCAL_PATH)/include/KERNEL_OBJ $(OUT)/obj/KERNEL_OBJ)
+#MK_KERNEL_OBJ := true
+#endif
+#endif
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
-else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
+#ifeq ($(TARGET_PREBUILT_KERNEL),)
+#	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
+#else
+#	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+#endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \

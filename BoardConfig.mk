@@ -23,11 +23,10 @@ TARGET_GLOBAL_CFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
 
 # Kernel
-# Kernel Configs
-#TARGET_KERNEL_SOURCE := /media/d/kernel/n910t-kk/Kernel
-#TARGET_KERNEL_CONFIG := apq8084_sec_defconfig
-#TARGET_KERNEL_VARIANT_CONFIG := apq8084_sec_trlte_tmo_defconfig
-TARGET_PREBUILT_KERNEL := device/samsung/trltetmo/kernel
+TARGET_KERNEL_SOURCE := kernel/samsung/trlte
+TARGET_KERNEL_CONFIG := apq8084_sec_defconfig 
+TARGET_KERNEL_VARIANT_CONFIG := apq8084_sec_trlte_philz_defconfig
+#TARGET_PREBUILT_KERNEL := device/samsung/trltetmo/kernel
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 dwc3_msm.cpu_to_affin=1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
