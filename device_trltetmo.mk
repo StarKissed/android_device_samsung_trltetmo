@@ -26,7 +26,7 @@ LOCAL_PATH := device/samsung/trltetmo
 #endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel \
+#    $(LOCAL_KERNEL):kernel \
     bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 
 $(call inherit-product, build/target/product/full.mk)
@@ -48,6 +48,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.cwm.forbid_format="/firmware,/firmware-modem" \
     ro.cwm.forbid_mount="/firmware,/firmware-modem"
+
+PRODUCT_PACKAGES += \
+    extra.fstab
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_COPY_FILES_OVERRIDES += \
