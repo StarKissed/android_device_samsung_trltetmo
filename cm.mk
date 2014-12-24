@@ -10,9 +10,12 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 # Inherit device configuration
 $(call inherit-product, device/samsung/trltetmo/device_trltetmo.mk)
 
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=trltetmo
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := trltetmo
 PRODUCT_NAME := cm_trltetmo
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SM-N910X
+PRODUCT_MODEL := SM-N910T
 PRODUCT_MANUFACTURER := samsung
