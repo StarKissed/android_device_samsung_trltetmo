@@ -32,18 +32,17 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, build/target/product/full.mk)
 
 ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.secure=0 \
     ro.bootloader.mode=download \
-    persist.sys.usb.config=mtp,adb \
-    ro.adb.secure=0 \
-    ro.securestorage.support=false \
-    ro.config.knox=0 \
-    ro.config.tima=0
+    persist.security.ams.enforcing=1 \
+    ro.secure=1 \
+    ro.allow.mock.location=0 \
+    ro.debuggable=1 \
+    ro.adb.secure=1 \
+    persist.sys.usb.config=mtp,adb
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=640 \
-    persist.timed.enable=true \
-    ro.build.selinux=0
+    persist.timed.enable=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.cwm.forbid_format="/firmware,/firmware-modem" \
@@ -51,9 +50,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PACKAGES += \
     extra.fstab
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.boot.selinux=disabled
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_COPY_FILES_OVERRIDES += \

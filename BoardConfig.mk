@@ -3,8 +3,9 @@ USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
 -include vendor/samsung/trltetmo/BoardConfigVendor.mk
+
 #TARGET_SPECIFIC_HEADER_PATH := device/samsung/trltetmo/include
-#TARGET_PRODUCT_KERNEL_HEADERS := /media/d/kernel/g906s-kk/include
+
 BOARD_VENDOR := samsung
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
@@ -23,11 +24,13 @@ TARGET_GLOBAL_CFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/samsung/trlte
+TARGET_KERNEL_SOURCE := kernel/samsung/trltetmo
 TARGET_KERNEL_CONFIG := apq8084_sec_defconfig 
-TARGET_KERNEL_VARIANT_CONFIG := apq8084_sec_trlte_tmo_defconfig
+TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
+TARGET_KERNEL_VARIANT_CONFIG := apq8084_sec_trlte_plz_defconfig
+TIMA_DEFCONFIG := tima_defconfig
 #TARGET_PREBUILT_KERNEL := device/samsung/trltetmo/kernel
-BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 dwc3_msm.cpu_to_affin=1 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=null androidboot.selinux=permissive androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 dwc3_msm.cpu_to_affin=1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02600000 --tags_offset 0x02400000 --dt device/samsung/trltetmo/dt.img
